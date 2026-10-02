@@ -1,0 +1,15 @@
+{
+  "_README": "Merge these keys into your EXISTING package.json (keep your own name/version/main/dependencies). Delete this line.",
+  "scripts": { "dist": "electron-builder" },
+  "devDependencies": { "electron-builder": "^24.13.3" },
+  "build": {
+    "appId": "com.p1.presenter",
+    "productName": "Presenter",
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "directories": { "output": "dist" },
+    "files": ["**/*", "!mobile/**", "!.github/**", "!dist/**", "!*.md"],
+    "win": { "target": ["nsis"] },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true },
+    "mac": { "target": ["dmg"], "category": "public.app-category.productivity" }
+  }
+}
